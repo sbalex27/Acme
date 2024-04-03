@@ -11,11 +11,13 @@ using Acme.Http.Requests;
 using LinkGenerator = Acme.Services.LinkGenerator;
 using AutoMapper;
 using Acme.Profiles;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Acme.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FormsController : ControllerBase
     {
         private readonly AcmeContext _context;

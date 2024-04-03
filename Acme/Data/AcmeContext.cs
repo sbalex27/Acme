@@ -14,7 +14,8 @@ namespace Acme.Data
         {
         }
 
-        public DbSet<Acme.Models.Form> Form { get; set; } = default!;
-        public DbSet<Acme.Models.Field> Field { get; set; } = default!;
+        public DbSet<User> User { get; set; } = default!;
+        public DbSet<Form> Form { get; set; } = default!;
+        public DbSet<Field> Field { get; set; } = default!;
     }
 }
