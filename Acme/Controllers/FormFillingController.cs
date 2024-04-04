@@ -150,7 +150,7 @@ namespace Acme.Controllers
         }
 
         public record FormFillRequest(string FilledBy, List<FieldRequest> Fields);
-        public record FieldRequest(string Name, object Value);
+        public record FieldRequest(string Name, object? Value);
         public record FormFillResponse(string Message, string Guest);
     }
 }
