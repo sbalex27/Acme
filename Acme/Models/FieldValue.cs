@@ -9,7 +9,6 @@
         public DateTime? DateValue { get; set; }
         public bool? BooleanValue { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        // TODO: Add user property
+        public string GuestName { get; set; } = null!;
     }
 }

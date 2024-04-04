@@ -35,10 +35,7 @@ namespace Acme.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FormDTO>>> GetForm()
         {
-            var forms = await _context.Form
-                .AsNoTracking()
-                .Include(form => form.Fields)
-                .ToListAsync();
+            var forms = await _context.Form.ToListAsync();
 
             var formsDTO = _mapper.Map<List<Form>, List<FormDTO>>(forms);
 
@@ -78,6 +75,8 @@ namespace Acme.Controllers
             }
 
             var form = _mapper.Map<Form>(formDto);
+            form.Name = _linkGenerator.NormalizeName(form.Name);
+            form.Link = _linkGenerator.GenerateFormName(form.Name);
             _context.Entry(form).State = EntityState.Modified;
 
             try
@@ -124,6 +123,7 @@ namespace Acme.Controllers
             }
 
             var link = _linkGenerator.GenerateFormName(formDTO.Name);
+            var name = _linkGenerator.NormalizeName(formDTO.Name);
 
             if (await _context.Form.AnyAsync(form => form.Link == link))
             {
@@ -133,6 +133,7 @@ namespace Acme.Controllers
 
             var form = _mapper.Map<Form>(formDTO);
             form.Link = link;
+            form.Name = name;
 
             _context.Form.Add(form);
             await _context.SaveChangesAsync();

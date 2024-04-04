@@ -23,13 +23,13 @@
 
         public string GenerateFormName(string formName)
         {
-            var normalizedFormName = NormalizeText(formName);
+            var normalizedFormName = NormalizeName(formName);
 
             var url = GetBaseUrl();
-            return $"{url}/fillForm/{normalizedFormName}";
+            return $"{url}/api/formFilling/{normalizedFormName}";
         }
 
-        public string NormalizeText(string text)
+        public string NormalizeName(string text)
         {
             return text.Replace(" ", "-").ToLower();
         }

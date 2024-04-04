@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Acme.Migrations
 {
     [DbContext(typeof(AcmeContext))]
-    [Migration("20240403061459_AuthMigration")]
-    partial class AuthMigration
+    [Migration("20240403235312_GuestNameMigration")]
+    partial class GuestNameMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,6 +76,10 @@ namespace Acme.Migrations
 
                     b.Property<int>("FieldId")
                         .HasColumnType("int");
+
+                    b.Property<string>("GuestName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("NumberValue")
                         .HasColumnType("int");

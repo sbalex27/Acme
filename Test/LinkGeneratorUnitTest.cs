@@ -39,7 +39,7 @@ namespace Test
         public void FullUrl()
         {
             // Arrange
-            var expected = "http://localhost/fillForm/my-form-created";
+            var expected = "http://localhost/api/formFilling/my-form-created";
 
             // Act
             var result = _linkGenerator.GenerateFormName("My Form Created");
@@ -57,7 +57,7 @@ namespace Test
         public void NormalizeText(string input, string expected)
         {
             // Act
-            var result = _linkGenerator.NormalizeText(input);
+            var result = _linkGenerator.NormalizeName(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));

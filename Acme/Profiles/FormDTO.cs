@@ -9,7 +9,8 @@ namespace Acme.Profiles
         public FormProfile()
         {
             CreateMap<Form, FormDTO>().ReverseMap();
-            CreateMap<Field, FieldDTO>().ReverseMap().ForMember(dest => dest.Values, opt => opt.Ignore());
+            CreateMap<Field, FieldDTO>().ReverseMap();
+            CreateMap<FieldValue, FieldValueDTO>().ReverseMap();
         }
     }
 
@@ -36,5 +37,15 @@ namespace Acme.Profiles
         public bool IsRequired { get; set; }
         [Required]
         public FieldType Type { get; set; }
+        public IEnumerable<FieldValueDTO>? Values { get; set; }
+    }
+
+    public class FieldValueDTO
+    {
+        public int FieldId { get; set; }
+        public string? TextValue { get; set; }
+        public int? NumberValue { get; set; }
+        public DateTime? DateValue { get; set; }
+        public bool? BooleanValue { get; set; }
     }
 }
