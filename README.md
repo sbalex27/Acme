@@ -5,9 +5,19 @@
 
 ![image](https://github.com/sbalex27/Acme/assets/48226829/3c54428d-c5d6-4da6-ba1f-c3168247d21a)
 
+## Instalación
+1. Clonamos el repositorio
+2. Abrimos la solución `Acme.sln`
+3. Si los paquetes no están instalados entonces los restauraremos
 
-## Requerimientos
-- Servicios para Creación, Modificación y eliminación de encuestas (Requiere autenticación por medio de oauth2 o jwt).
+![image](https://github.com/sbalex27/Acme/assets/48226829/175ebc61-afaa-48d7-ad2c-a63048a6ca1e)
+
+4. Ejecutamos el comando `Update-Database` en la Package Manager Console para levantar la base de datos
+
+Y ¡Listo! ya tenemos configurada la solución
+
+## Analisis de Requerimientos
+- Servicios para Creación, Modificación y eliminación de encuestas (Requiere autenticación jwt).
   - Nombre de Encuesta
   - Descripción de encuesta
   - Listado de campos
@@ -18,7 +28,7 @@
   - Al crear el formulario se generará un link único que servirá para llenar la encuesta.
 - Servicio para llenado de la encuesta (No requiere autenticación)
   - Al acceder al link generado se desplegarán los campos configurados en la encuesta y se permitirá ingresar los valores correspondientes, dependiendo el tipo de campo, al guardar la encuesta se almacenarán los valores ingresados para cada campo.
-- Servicio para obtener los resultados de cada encuesta (Requiere autenticación por medio de oauth2 o jwt).
+- Servicio para obtener los resultados de cada encuesta (Requiere autenticación jwt).
 
 ## Estructura
 Los controladores están ubicados en `Acme/Controllers` siendo controladores Api comúnes, en el directorio `Acme/Data` encontraremos el DbContext (Se usa EntityFramework) para la conexión a la base de datos. En `Ame/Migrations` encontraremos las migraciones que deben ser ejecutadas con `Update-Database` en la Package Manager Console. Los modelos están ubicados en `Acme/Models`. Los perfiles (Mapeos DTO) están ubicados en `Acme/Profiles` y por último los servicios están ubicados en `Acme/Services.`
