@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "183c096c-a6f7-4953-9bfc-c180fb8a35b2",
+		"name": "Acme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13071564"
+	},
+	"item": [
+		{
+			"name": "Forms",
+			"item": [
+				{
+					"name": "GetForms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7277/api/Forms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Forms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindForm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7277/api/Forms/:id",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Forms",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostForm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Conocimientos Desarrollo Software\",\r\n    \"Description\": \"Este formulario solicita el envío de sus conocimientos en Desarrollo de Software\",\r\n    \"Fields\": [\r\n        {\r\n            \"Name\": \"FirstName\",\r\n            \"Title\": \"Nombres Completos\",\r\n            \"IsRequired\": true,\r\n            \"Type\": \"Text\"\r\n        },\r\n        {\r\n            \"Name\": \"LastName\",\r\n            \"Title\": \"Apellidos\",\r\n            \"IsRequired\": true,\r\n            \"Type\": \"Text\"\r\n        },\r\n        {\r\n            \"Name\": \"Birthday\",\r\n            \"Title\": \"Fecha Nacimiento\",\r\n            \"IsRequired\": true,\r\n            \"Type\": \"Date\"\r\n        },\r\n        {\r\n            \"Name\": \"NetCoreExperience\",\r\n            \"Title\": \"¿Tiene experiencia en .NET CORE / .NET FRAMEWORK?\",\r\n            \"IsRequired\": true,\r\n            \"Type\": \"Boolean\"\r\n        },\r\n        {\r\n            \"Name\": \"LangNumber\",\r\n            \"Title\": \"¿Con cuántos lenguajes tiene experiencia?\",\r\n            \"IsRequired\": false,\r\n            \"Type\": \"Number\"\r\n        },\r\n        {\r\n            \"Name\": \"LangNames\",\r\n            \"Title\": \"Escriba los lenguajes con los que ha trabajado\",\r\n            \"IsRequired\": false,\r\n            \"Type\": \"Text\"\r\n        }, \r\n        {\r\n            \"Name\": \"SoftwareDeveloperExperience\",\r\n            \"Title\": \"¿Cuántos años tiene de experiencia en desarrollo de software?\",\r\n            \"IsRequired\": true,\r\n            \"Type\": \"Number\"\r\n        },\r\n        {\r\n            \"Name\": \"FrontendExperience\",\r\n            \"Title\": \"¿Tiene experiencia en Frontend?\",\r\n            \"IsRequired\": true,\r\n            \"Type\": \"Boolean\"\r\n        },\r\n        {\r\n            \"Name\": \"BackendExperience\",\r\n            \"Title\": \"¿Tiene experiencia en Backend?\",\r\n            \"IsRequired\": false,\r\n            \"Type\": \"Boolean\"\r\n        },\r\n        {\r\n            \"Name\": \"MobileExperience\",\r\n            \"Title\": \"¿Tiene conocimiento en desarrollo móvil?\",\r\n            \"IsRequired\": false,\r\n            \"Type\": \"Boolean\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7277/api/Forms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Forms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutForm",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"software-development-knowledge\",\r\n    \"description\": \"This form requests submission of your knowledge in Software Development\",\r\n    \"fields\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"FirstName\",\r\n            \"title\": \"First Name\",\r\n            \"isRequired\": true,\r\n            \"type\": \"Text\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"LastName\",\r\n            \"title\": \"Last Name\",\r\n            \"isRequired\": true,\r\n            \"type\": \"Text\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"Birthday\",\r\n            \"title\": \"Date of Birth\",\r\n            \"isRequired\": true,\r\n            \"type\": \"Date\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"NetCoreExperience\",\r\n            \"title\": \"Do you have experience in .NET CORE / .NET FRAMEWORK?\",\r\n            \"isRequired\": true,\r\n            \"type\": \"Boolean\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"LangNumber\",\r\n            \"title\": \"How many programming languages do you have experience with?\",\r\n            \"isRequired\": false,\r\n            \"type\": \"Number\"\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"name\": \"LangNames\",\r\n            \"title\": \"List the programming languages you have worked with\",\r\n            \"isRequired\": false,\r\n            \"type\": \"Text\"\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"name\": \"SoftwareDeveloperExperience\",\r\n            \"title\": \"How many years of experience do you have in software development?\",\r\n            \"isRequired\": true,\r\n            \"type\": \"Number\"\r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"name\": \"FrontendExperience\",\r\n            \"title\": \"Do you have experience in Frontend?\",\r\n            \"isRequired\": true,\r\n            \"type\": \"Boolean\"\r\n        },\r\n        {\r\n            \"id\": 9,\r\n            \"name\": \"BackendExperience\",\r\n            \"title\": \"Do you have experience in Backend?\",\r\n            \"isRequired\": false,\r\n            \"type\": \"Boolean\"\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"name\": \"MobileExperience\",\r\n            \"title\": \"Do you have knowledge in mobile development?\",\r\n            \"isRequired\": false,\r\n            \"type\": \"Boolean\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7277/api/Forms/:id",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Forms",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteForm",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7277/api/Forms/:id",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Forms",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{JWT}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"DevelQa\",\r\n    \"Password\": \"Im a Devel QA 123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7277/api/Auth/Register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Auth",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"DevelQa\",\r\n    \"Password\": \"Im a Devel QA 123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7277/api/Auth/Login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"Auth",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Form Fill",
+			"item": [
+				{
+					"name": "FillForm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FilledBy\": \"Sergio Alexander Batres Escobedo\",\r\n    \"Fields\": [\r\n        {\r\n            \"name\": \"FirstName\",\r\n            \"value\": \"Sergio Alexander\"\r\n        },\r\n        {\r\n            \"name\": \"LastName\",\r\n            \"value\": \"Batres Escobedo\"\r\n        },\r\n        {\r\n            \"name\": \"Birthday\",\r\n            \"value\": \"2000-03-27\"\r\n        },\r\n        {\r\n            \"name\": \"NetCoreExperience\",\r\n            \"value\": true\r\n        },\r\n        {\r\n            \"name\": \"LangNumber\",\r\n            \"value\": 5\r\n        },\r\n        {\r\n            \"name\": \"LangNames\",\r\n            \"value\": \"C#, Javascript, Dart, PHP, TypeScript, VBA (Visual Basic for Applications)\"\r\n        },\r\n        {\r\n            \"name\": \"SoftwareDeveloperExperience\",\r\n            \"value\": 5\r\n        },\r\n        {\r\n            \"name\": \"FrontendExperience\",\r\n            \"value\": true\r\n        },\r\n        {\r\n            \"name\": \"BackendExperience\",\r\n            \"value\": true\r\n        },\r\n        {\r\n            \"name\": \"MobileExperience\",\r\n            \"value\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7277/api/FormFilling/software-development-knowledge",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"FormFilling",
+								"software-development-knowledge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFormToFill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7277/api/FormFilling/software-development-knowledge",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7277",
+							"path": [
+								"api",
+								"FormFilling",
+								"software-development-knowledge"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "JWT",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxMzMxMDEsImlzcyI6InlvdXRDb21wYW55SXNzdWVyLmNvbSIsImF1ZCI6InlvdXRDb21wYW55SXNzdWVyLmNvbSJ9.eSHAw60cpKB0Gjw1Gas6gXNITJkhwnHgclMwBZJ3d00",
+			"type": "string"
+		}
+	]
+}
