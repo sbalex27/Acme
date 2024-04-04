@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Acme.Data;
 using Acme.Models;
-using Acme.Http.Requests;
 using LinkGenerator = Acme.Services.LinkGenerator;
 using AutoMapper;
 using Acme.Profiles;
