@@ -1,4 +1,7 @@
 # ACME
+> **IMPORTANTE**
+> 
+> Se incluye una colección de Postman la cuál está ubicada en ./Acme.postman_collection de la solución lo puede encontrar en el directorio principal de este repositorio para realizar las pruebas en postman
 
 ## Requerimientos
 - Servicios para Creación, Modificación y eliminación de encuestas (Requiere autenticación por medio de oauth2 o jwt).
